@@ -4,10 +4,10 @@ Personal portfolio site for **Aditya Nudurumati**, a Software Engineer and Flutt
 developer based in Hyderabad, India. It presents my experience, the production
 applications I've shipped, my stack and my education in a single page.
 
-**Live:** [adityanudurumati.com](https://adityanudurumati.com)
+**Live:** [adityanudurumati.com](https://adityanudurumati.com)  ·  Built with
+React, Vite and hand-written CSS — no UI framework, ~77 KB gzipped.
 
-Built with React and Vite, hand-written CSS, and no UI framework — the whole
-site ships in roughly 77 KB gzipped.
+![The portfolio homepage: a dark hero section reading "Hi, I'm Aditya Nudurumati", a short introduction, View My Work and Download Resume buttons, and a Dart code panel beside it.](docs/preview.webp)
 
 ---
 
