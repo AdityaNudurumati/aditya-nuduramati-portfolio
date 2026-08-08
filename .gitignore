@@ -1,3 +1,43 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+dist
+dist-ssr
+build
+.vite
+*.local
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+
+# Credentials / service accounts
+**/serviceAccount*.json
+**/service-account*.json
+**/*firebase-adminsdk*.json
+.firebase
+.firebaserc
+firebase-debug.log*
+google-services.json
+GoogleService-Info.plist
+credentials.json
+secrets.json
+*.credentials
+.netrc
+.npmrc
+.aws
+.gcloud
+
 # Logs
 logs
 *.log
@@ -7,18 +47,28 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Caches and coverage
+.cache
+.parcel-cache
+.eslintcache
+coverage
+*.tsbuildinfo
+
+# Deployment platform metadata
+.vercel
+.netlify
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
