@@ -1,0 +1,118 @@
+.education__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.education__card {
+  padding: 1.5rem 1.5rem 1.6rem;
+}
+
+.education__card:hover {
+  border-color: var(--border);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+
+.education__period {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+}
+
+.education__qualification {
+  margin-bottom: 0.3rem;
+  font-size: var(--fs-h3);
+  font-weight: 550;
+}
+
+.education__institution {
+  margin-bottom: 0.55rem;
+  font-size: var(--fs-small);
+  color: var(--accent);
+}
+
+.education__location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+}
+
+.education__details {
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Certifications ----------------------------------------------------------- */
+
+.education__certs {
+  margin-top: 2.75rem;
+}
+
+.education__subtitle {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  color: var(--text-strong);
+}
+
+.education__cert-list {
+  display: grid;
+  gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.education__cert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+.education__cert:hover {
+  background: var(--surface-hover);
+}
+
+.education__cert-name {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.education__cert-name a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.education__cert-name a:hover {
+  color: var(--accent);
+}
+
+.education__cert-issuer {
+  font-size: var(--fs-micro);
+  color: var(--text-muted);
+}
+
+.education__cert-period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+}

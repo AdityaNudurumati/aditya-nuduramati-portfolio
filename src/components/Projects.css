@@ -1,0 +1,7 @@
+/* One project per row. Cards stack vertically on narrow screens and switch to
+   a media/body split at 900px, so every card reads the same way. */
+.projects__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}

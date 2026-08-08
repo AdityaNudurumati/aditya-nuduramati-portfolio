@@ -1,0 +1,138 @@
+/* Shared timeline styling used by the Experience section. */
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding-left: 1.65rem;
+}
+
+/* The rail. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(
+    var(--accent-line),
+    var(--border-subtle) 35%,
+    transparent
+  );
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__dot {
+  position: absolute;
+  top: 1.6rem;
+  left: -1.65rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border-strong);
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+
+.timeline__item:hover .timeline__dot {
+  border-color: var(--accent);
+}
+
+.timeline__card {
+  padding: 1.4rem 1.4rem 1.5rem;
+}
+
+.timeline__card:hover {
+  border-color: var(--border);
+  background: var(--surface-hover);
+}
+
+.timeline__period {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+
+.timeline__role {
+  margin-bottom: 0.25rem;
+  font-size: var(--fs-h3);
+  font-weight: 550;
+}
+
+.timeline__company {
+  margin-bottom: 0.9rem;
+  font-size: var(--fs-small);
+  color: var(--accent);
+}
+
+.timeline__company a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.timeline__company a:hover {
+  border-bottom-color: var(--accent-line);
+}
+
+.timeline__summary {
+  margin-bottom: 0.9rem;
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.timeline__points {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.15rem;
+}
+
+.timeline__points li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.timeline__points li::before {
+  content: '';
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--accent-line);
+}
+
+/* Separates the period from the location without relying on punctuation. */
+.timeline__location::before {
+  content: '·';
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 2.25rem;
+  }
+
+  .timeline__dot {
+    left: -2.25rem;
+    top: 1.75rem;
+  }
+}

@@ -1,0 +1,100 @@
+/* Portrait beside the prose, with the facts as a full-width strip underneath.
+   Keeping the facts out of the sidebar stops one column running much longer
+   than the other and leaving dead space. */
+.about__layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.about__photo {
+  margin: 0;
+  max-width: 16rem;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.about__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  /* Bias upward so the crop never cuts across the face. */
+  object-position: center 22%;
+}
+
+.about__prose p {
+  margin-bottom: 1.15rem;
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.78;
+  color: var(--text);
+}
+
+.about__prose p:last-child {
+  margin-bottom: 0;
+}
+
+.about__facts {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.about__fact {
+  padding: 1.15rem 1.25rem;
+  background: var(--bg);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+.about__fact:hover {
+  background: var(--surface-hover);
+}
+
+.about__fact dt {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.about__fact dd {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--text-strong);
+}
+
+@media (min-width: 640px) {
+  .about__photo {
+    max-width: 18rem;
+  }
+
+  .about__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .about__layout {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .about__photo {
+    max-width: none;
+  }
+
+  /* Full width beneath both columns. */
+  .about__facts {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

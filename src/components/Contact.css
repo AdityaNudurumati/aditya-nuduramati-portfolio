@@ -1,0 +1,164 @@
+.contact__layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+/* Channels ----------------------------------------------------------------- */
+
+.contact__links {
+  display: grid;
+  /* minmax(0, …) stops long handles (the email address) from widening the
+     track past the container on narrow screens. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 1rem 1.15rem;
+}
+
+.contact__link:hover {
+  border-color: var(--accent-line);
+  background: var(--surface-hover);
+  transform: translateX(3px);
+}
+
+.contact__link-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+}
+
+.contact__link-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact__link-label {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.contact__link-handle {
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact__link-arrow {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.contact__link:hover .contact__link-arrow {
+  color: var(--accent);
+}
+
+.contact__availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+/* Form --------------------------------------------------------------------- */
+
+.contact__form {
+  display: grid;
+  gap: 1.05rem;
+  padding: 1.6rem 1.5rem 1.7rem;
+}
+
+.contact__form-note {
+  padding: 0.7rem 0.9rem;
+  font-size: var(--fs-micro);
+  line-height: 1.6;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+}
+
+.contact__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.contact__field label {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.72rem 0.9rem;
+  font-size: var(--fs-small);
+  color: var(--text-strong);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 7rem;
+  line-height: 1.6;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.contact__field input:hover,
+.contact__field textarea:hover {
+  border-color: var(--border);
+}
+
+.contact__field input:focus-visible,
+.contact__field textarea:focus-visible {
+  border-color: var(--accent);
+  outline-offset: 1px;
+}
+
+.contact__fallback {
+  font-size: var(--fs-micro);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.contact__fallback a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-line);
+  word-break: break-all;
+}
+
+@media (min-width: 900px) {
+  .contact__layout {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aditya Nudurumati | Flutter Developer</title>
+    <meta
+      name="description"
+      content="Aditya Nudurumati — Software Engineer building production Flutter applications for mobile, web, and TV, with a focus on real-time IoT monitoring."
+    />
+    <meta name="author" content="Aditya Nudurumati" />
+    <link rel="canonical" href="https://adityanudurumati.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aditya Nudurumati" />
+    <meta property="og:title" content="Aditya Nudurumati | Flutter Developer" />
+    <meta
+      property="og:description"
+      content="Software Engineer building production Flutter applications for mobile, web, and TV, with a focus on real-time IoT monitoring."
+    />
+    <meta property="og:url" content="https://adityanudurumati.com/" />
+    <meta property="og:image" content="https://adityanudurumati.com/og-image.svg" />
+    <meta property="og:image:alt" content="Aditya Nudurumati — Flutter Developer" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aditya Nudurumati | Flutter Developer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer building production Flutter applications for mobile, web, and TV, with a focus on real-time IoT monitoring."
+    />
+    <meta name="twitter:image" content="https://adityanudurumati.com/og-image.svg" />
+
+    <meta name="theme-color" content="#08090c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aditya Nudurumati",
+        "jobTitle": "Software Engineer",
+        "url": "https://adityanudurumati.com/",
+        "email": "mailto:adithyanudurumati@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Hyderabad",
+          "addressCountry": "IN"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "AquaExchange Agri Tech Pvt Ltd"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Rajiv Gandhi University of Knowledge Technologies, Srikakulam (IIIT-AP)"
+        },
+        "knowsAbout": ["Flutter", "Dart", "Riverpod", "Firebase", "REST APIs"],
+        "sameAs": [
+          "https://www.linkedin.com/in/aditya-nudurumati-b936a316a/",
+          "https://github.com/AdityaNudurumati"
+        ]
+      }
+    </script>
+
+    <!-- Apply the stored theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

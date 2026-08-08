@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f2f4f8" />
+      <stop offset="70%" stop-color="#7d9bff" />
+      <stop offset="100%" stop-color="#9f86ff" />
+    </linearGradient>
+    <radialGradient id="bloom" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#7d9bff" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#7d9bff" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect width="1200" height="630" fill="url(#bloom)" />
+
+  <g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="88" y="104" width="56" height="56" rx="12" fill="#7d9bff" fill-opacity="0.12" stroke="#7d9bff" stroke-opacity="0.35" />
+    <text x="116" y="142" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="22" font-weight="600" fill="#7d9bff">AN</text>
+
+    <text x="88" y="300" font-size="82" font-weight="600" letter-spacing="-3" fill="url(#text)">Aditya Nudurumati</text>
+    <text x="88" y="360" font-size="34" font-weight="500" fill="#8b93a4">Software Engineer · Flutter Developer</text>
+    <text x="88" y="432" font-size="24" fill="#7b8496">Mobile · Web · TV</text>
+
+    <text x="88" y="536" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="21" fill="#666e80">adityanudurumati.com</text>
+  </g>
+</svg>
