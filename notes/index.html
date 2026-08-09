@@ -10,9 +10,10 @@
       content="Long-form study notes by Aditya Nudurumati — a full Flutter and Dart track covering the language, architecture, performance, testing and delivery, published as free PDFs."
     />
     <meta name="author" content="Aditya Nudurumati" />
-    <link rel="canonical" href="https://adityanudurumati.com/notes/" />
+    <link rel="canonical" href="https://www.adityanudurumati.com/notes/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph. The image must be PNG/JPEG — LinkedIn, WhatsApp, Slack and
+         Facebook all silently drop SVG, which renders the card imageless. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Aditya Nudurumati" />
     <meta property="og:title" content="Notes | Aditya Nudurumati" />
@@ -20,8 +21,11 @@
       property="og:description"
       content="Long-form study notes on Flutter and Dart — the language, architecture, performance, testing and delivery — published as free PDFs."
     />
-    <meta property="og:url" content="https://adityanudurumati.com/notes/" />
-    <meta property="og:image" content="https://adityanudurumati.com/og-image.svg" />
+    <meta property="og:url" content="https://www.adityanudurumati.com/notes/" />
+    <meta property="og:image" content="https://www.adityanudurumati.com/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Aditya Nudurumati — Flutter Developer" />
     <meta property="og:locale" content="en_US" />
 
@@ -32,19 +36,24 @@
       name="twitter:description"
       content="Long-form study notes on Flutter and Dart, published as free PDFs."
     />
-    <meta name="twitter:image" content="https://adityanudurumati.com/og-image.svg" />
+    <meta name="twitter:image" content="https://www.adityanudurumati.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Aditya Nudurumati — Flutter Developer" />
 
     <meta name="theme-color" content="#08090c" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <!-- iOS ignores SVG here and screenshots the page instead, so this must be a PNG. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Inter is self-hosted (see the @font-face in src/index.css). Preloading
+         it starts the download alongside the CSS instead of after it. -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/inter-latin-wght-normal.woff2"
+      crossorigin
     />
 
     <script type="application/ld+json">
@@ -53,16 +62,16 @@
         "@type": "CollectionPage",
         "name": "Notes",
         "description": "Long-form study notes published as PDF documents.",
-        "url": "https://adityanudurumati.com/notes/",
+        "url": "https://www.adityanudurumati.com/notes/",
         "isPartOf": {
           "@type": "WebSite",
           "name": "Aditya Nudurumati",
-          "url": "https://adityanudurumati.com/"
+          "url": "https://www.adityanudurumati.com/"
         },
         "author": {
           "@type": "Person",
           "name": "Aditya Nudurumati",
-          "url": "https://adityanudurumati.com/"
+          "url": "https://www.adityanudurumati.com/"
         }
       }
     </script>

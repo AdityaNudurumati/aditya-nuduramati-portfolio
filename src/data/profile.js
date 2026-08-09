@@ -1,5 +1,6 @@
 import photoLarge from '../assets/profile-900.webp';
 import photoSmall from '../assets/profile-540.webp';
+import { resumeFileName, resumeUrl, siteUrl } from './site';
 
 /**
  * Single source of truth for personal information.
@@ -12,7 +13,7 @@ export const profile = {
   role: 'Flutter Developer',
   roleLong: 'Software Engineer · Flutter Developer',
   location: 'Hyderabad, India',
-  siteUrl: 'https://adityanudurumati.com',
+  siteUrl,
 
   company: 'AquaExchange Agri Tech',
   yearsOfExperience: '3+ years',
@@ -21,8 +22,8 @@ export const profile = {
   tagline:
     'I build production Flutter applications for mobile, web, and TV — currently powering real-time IoT monitoring for aquaculture farms across India.',
 
-  resumeUrl: '/resume/Aditya-Nudurumati-Resume.pdf',
-  resumeFileName: 'Aditya-Nudurumati-Resume.pdf',
+  resumeUrl,
+  resumeFileName,
 
   photo: photoLarge,
   photoSmall,

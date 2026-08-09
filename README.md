@@ -5,7 +5,7 @@ developer based in Hyderabad, India. It presents my experience, the production
 applications I've shipped, my stack and my education on a single page, plus a
 separate `/notes/` page publishing the long-form study notes I write.
 
-**Live:** [adityanudurumati.com](https://adityanudurumati.com)  ·  Built with
+**Live:** [adityanudurumati.com](https://www.adityanudurumati.com)  ·  Built with
 React, Vite and hand-written CSS — no UI framework, ~77 KB gzipped.
 
 ![The portfolio homepage: a dark hero section reading "Hi, I'm Aditya Nudurumati", a short introduction, View My Work and Download Resume buttons, and a Dart code panel beside it.](docs/preview.webp)

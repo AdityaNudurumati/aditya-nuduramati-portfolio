@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adityanudurumati.com/sitemap.xml
+Sitemap: https://www.adityanudurumati.com/sitemap.xml
