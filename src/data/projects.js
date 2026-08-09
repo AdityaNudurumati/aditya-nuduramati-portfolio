@@ -8,8 +8,11 @@ import dashboardSmall from '../assets/dashboard-900.webp';
  * public repository — `github` is null and the cards omit the Code button.
  *
  * Shape:
- *   id, name, context, description, tech[], github, demo, demoLabel,
+ *   id, name, context, description, metric, tech[], github, demo, demoLabel,
  *   image, imageSmall, imageAlt, featured
+ *
+ * `metric` is the one-line proof point; the hero shows it under the featured
+ * project, so keep it short and factual.
  *
  * `image` is the full-size asset and `imageSmall` an optional narrower one;
  * the card serves whichever fits the viewport via srcset.
@@ -21,6 +24,7 @@ export const projects = [
     context: 'AquaExchange · Android & iOS',
     description:
       'A production Flutter app used by 15,000+ farmers across 4 states to monitor and manage IoT devices on their farms, backed by real-time Firestore data and Google Maps. Includes an in-app store for purchasing devices, feed, and farm products with Razorpay payments, plus push notifications and deep linking.',
+    metric: '15,000+ farmers · 10,000+ IoT devices · 4 states',
     tech: [
       'Flutter',
       'Dart',
@@ -31,8 +35,7 @@ export const projects = [
       'Hive',
     ],
     github: null,
-    // TODO: paste the Play Store listing URL to enable the button.
-    demo: null,
+    demo: 'https://play.google.com/store/apps/details?id=com.aquaexchange.app',
     demoLabel: 'Play Store',
     image: axmLarge,
     imageSmall: axmSmall,
@@ -46,6 +49,7 @@ export const projects = [
     context: 'AquaExchange · Internal web portal',
     description:
       'A Flutter Web dashboard used by operations, call centre, and finance teams to monitor farm activity, IoT devices, and platform metrics in real time. Covers device monitoring, feeder order management, service ticket tracking, subscriptions, and farm management, with role-based access control and Excel export reporting.',
+    metric: 'Used daily by operations, call centre and finance teams',
     tech: [
       'Flutter Web',
       'Dart',
@@ -55,9 +59,10 @@ export const projects = [
       'Elasticsearch',
     ],
     github: null,
-    demo: null,
-    // Internal tool — there is no public URL to link to.
-    demoLabel: null,
+    // The portal is login-gated, so the link proves it is deployed rather than
+    // offering a walkthrough — the label says so to set expectations.
+    demo: 'https://dashboard1.aquaexchange.com/#/login',
+    demoLabel: 'Live Portal',
     image: dashboardLarge,
     imageSmall: dashboardSmall,
     imageAlt:

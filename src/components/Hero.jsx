@@ -1,18 +1,44 @@
 import { heroLinks, profile } from '../data/profile';
+import { projects } from '../data/projects';
 import { Icon } from './ui/Icon';
 import './Hero.css';
 
-/** Decorative code panel — mirrors the profile data, so it never goes stale. */
-const codeLines = [
-  { indent: 0, tokens: [['kw', 'final'], ['sp', ' '], ['var', 'developer'], ['sp', ' = '], ['type', 'Developer'], ['pun', '(']] },
-  { indent: 1, tokens: [['key', 'name'], ['pun', ': '], ['str', `'${profile.name}'`], ['pun', ',']] },
-  { indent: 1, tokens: [['key', 'role'], ['pun', ': '], ['str', `'${profile.role}'`], ['pun', ',']] },
-  { indent: 1, tokens: [['key', 'basedIn'], ['pun', ': '], ['str', `'${profile.location}'`], ['pun', ',']] },
-  { indent: 1, tokens: [['key', 'platforms'], ['pun', ': ['], ['str', "'mobile'"], ['pun', ', '], ['str', "'web'"], ['pun', ', '], ['str', "'tv'"], ['pun', '],']] },
-  { indent: 0, tokens: [['pun', ');']] },
-];
+/**
+ * The hero showcases real shipped work rather than a decorative snippet, so
+ * the first screen carries proof. It is a teaser — the Projects section below
+ * holds the full write-up, and this links straight to the live listing.
+ */
+const showcase = projects.find((project) => project.featured) ?? projects[0];
 
 export function Hero() {
+  const showcaseBody = showcase && (
+    <>
+      <img
+        className="hero__showcase-img"
+        src={showcase.image}
+        srcSet={
+          showcase.imageSmall
+            ? `${showcase.imageSmall} 900w, ${showcase.image} 1600w`
+            : undefined
+        }
+        /* The panel is hidden below 1024px, so narrow viewports should never
+           pick the large asset for something they will not render. */
+        sizes="(min-width: 1024px) 46vw, 1px"
+        alt={showcase.imageAlt || `Screenshot of ${showcase.name}`}
+        width="1600"
+        height="1000"
+        decoding="async"
+        fetchPriority="high"
+      />
+      <span className="hero__showcase-caption">
+        <span className="hero__showcase-name">{showcase.name}</span>
+        {showcase.metric && (
+          <span className="hero__showcase-metric">{showcase.metric}</span>
+        )}
+      </span>
+    </>
+  );
+
   return (
     <section className="hero" id="home" aria-labelledby="hero-heading">
       <div className="hero__grid-bg" aria-hidden="true" />
@@ -67,30 +93,20 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="hero__panel" aria-hidden="true">
-          <div className="hero__panel-bar">
-            <span className="hero__dot" />
-            <span className="hero__dot" />
-            <span className="hero__dot" />
-            <span className="hero__panel-file">developer.dart</span>
-          </div>
-          <pre className="hero__code">
-            <code>
-              {codeLines.map((line, lineIndex) => (
-                <span className="hero__code-line" key={lineIndex}>
-                  <span className="hero__code-number">{lineIndex + 1}</span>
-                  <span style={{ paddingLeft: `${line.indent * 1.25}rem` }}>
-                    {line.tokens.map(([type, text], tokenIndex) => (
-                      <span className={`tok tok--${type}`} key={tokenIndex}>
-                        {text}
-                      </span>
-                    ))}
-                  </span>
-                </span>
-              ))}
-            </code>
-          </pre>
-        </div>
+        {showcase &&
+          (showcase.demo ? (
+            <a
+              className="hero__panel hero__panel--link"
+              href={showcase.demo}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`${showcase.name} — ${showcase.demoLabel ?? 'live listing'} (opens in a new tab)`}
+            >
+              {showcaseBody}
+            </a>
+          ) : (
+            <div className="hero__panel">{showcaseBody}</div>
+          ))}
       </div>
 
       <a className="hero__scroll" href="#about" aria-label="Scroll to the About section">

@@ -20,7 +20,6 @@ export function ProjectCard({ project }) {
     featured,
   } = project;
   const titleId = `project-${project.id}-title`;
-  const hasLinks = Boolean(github || demo);
 
   return (
     <article
@@ -101,7 +100,7 @@ export function ProjectCard({ project }) {
             </a>
           )}
 
-          {!hasLinks && (
+          {!github && (
             <p className="project-card__note">
               Company product — source is private
             </p>

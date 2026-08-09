@@ -158,7 +158,7 @@
   color: var(--accent);
 }
 
-/* Code panel --------------------------------------------------------------- */
+/* Featured-work panel ------------------------------------------------------ */
 
 .hero__panel {
   display: none;
@@ -170,59 +170,59 @@
   animation: hero-in var(--dur-slow) var(--ease-out) 320ms both;
 }
 
-.hero__panel-bar {
+.hero__panel--link {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+
+.hero__panel--link:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-line);
+}
+
+.hero__panel--link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.hero__showcase-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__showcase-caption {
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.7rem 0.95rem;
-  border-bottom: 1px solid var(--border-subtle);
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.95rem 1.1rem 1.05rem;
+  border-top: 1px solid var(--border-subtle);
   background: var(--surface);
 }
 
-.hero__dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--border-strong);
+.hero__showcase-name {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-strong);
 }
 
-.hero__panel-file {
-  margin-left: 0.6rem;
+.hero__showcase-metric {
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   color: var(--text-faint);
 }
 
-.hero__code {
-  margin: 0;
-  padding: 1.25rem 1.1rem 1.5rem;
-  overflow-x: auto;
-  font-family: var(--font-mono);
-  font-size: 0.83rem;
-  line-height: 1.9;
-}
+@media (prefers-reduced-motion: reduce) {
+  .hero__panel--link {
+    transition: none;
+  }
 
-.hero__code-line {
-  display: flex;
-  gap: 1.1rem;
-  white-space: pre;
+  .hero__panel--link:hover {
+    transform: none;
+  }
 }
-
-.hero__code-number {
-  flex-shrink: 0;
-  width: 1.1rem;
-  text-align: right;
-  color: var(--text-faint);
-  opacity: 0.55;
-}
-
-.tok--kw { color: var(--accent-2); }
-.tok--type { color: var(--accent-strong); }
-.tok--var { color: var(--text-strong); }
-.tok--key { color: var(--accent); }
-.tok--str { color: var(--text); }
-.tok--pun,
-.tok--sp { color: var(--text-faint); }
 
 /* Scroll cue --------------------------------------------------------------- */
 
