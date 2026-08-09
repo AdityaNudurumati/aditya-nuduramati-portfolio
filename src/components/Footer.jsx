@@ -4,7 +4,12 @@ import './Footer.css';
 
 const startYear = 2026;
 
-export function Footer() {
+/**
+ * `homeHref` prefixes the brand link so it points back to the home page from a
+ * sub-page; `topHref` is the back-to-top target, which on a sub-page is that
+ * page's own main landmark rather than the home hero.
+ */
+export function Footer({ homeHref = '', topHref = '#home' }) {
   const currentYear = new Date().getFullYear();
   const yearLabel =
     currentYear > startYear ? `${startYear}–${currentYear}` : String(startYear);
@@ -13,7 +18,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__identity">
-          <a className="footer__brand" href="#home">
+          <a className="footer__brand" href={`${homeHref}#home`}>
             <span className="footer__mark" aria-hidden="true">
               {profile.initials}
             </span>
@@ -47,7 +52,7 @@ export function Footer() {
           <p className="footer__copyright">
             &copy; {yearLabel} {profile.name}
           </p>
-          <a className="footer__top" href="#home">
+          <a className="footer__top" href={topHref}>
             Back to top
             <Icon name="arrowUp" size={14} />
           </a>

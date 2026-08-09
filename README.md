@@ -2,7 +2,8 @@
 
 Personal portfolio site for **Aditya Nudurumati**, a Software Engineer and Flutter
 developer based in Hyderabad, India. It presents my experience, the production
-applications I've shipped, my stack and my education in a single page.
+applications I've shipped, my stack and my education on a single page, plus a
+separate `/notes/` page publishing the long-form study notes I write.
 
 **Live:** [adityanudurumati.com](https://adityanudurumati.com)  ·  Built with
 React, Vite and hand-written CSS — no UI framework, ~77 KB gzipped.
@@ -16,7 +17,8 @@ React, Vite and hand-written CSS — no UI framework, ~77 KB gzipped.
 | Layer | Choice | Why |
 | --- | --- | --- |
 | Framework | React 19 | Component reuse without a heavy runtime |
-| Build | Vite 8 | Fast dev server, hashed production assets |
+| Build | Vite 8 (multi-page) | One HTML entry per page — no router dependency |
+| Routing | Real URLs, no router | `/notes/` is a document, so it survives a refresh on any static host |
 | Language | JavaScript (ESM) | No build-step complexity beyond Vite |
 | Styling | Hand-written CSS | Design tokens + one stylesheet per component |
 | Icons | Inline SVG | Avoids an icon-library dependency |
@@ -29,8 +31,11 @@ component library, no animation library, no icon package.
 
 ## Features
 
-- **Nine sections** — navbar, hero, about, skills, projects, experience,
-  education, contact and footer
+- **Two pages** — a single-scroll home page (hero, about, skills, projects,
+  experience, education, contact) and `/notes/`, a standalone study-notes
+  archive that stays out of the home-page scroll
+- **Notes archive** — subject tracks of long-form PDFs, grouped into collapsible
+  modules, each document viewable in the browser or downloadable
 - **Light and dark themes** — follows the OS preference, overridable by a
   toggle, persisted to `localStorage`, and applied before first paint so there
   is no flash of the wrong theme
@@ -87,20 +92,32 @@ npm run dev
 ## Project structure
 
 ```
+index.html           home page entry
+notes/index.html     notes page entry — own title, canonical and OG tags
 public/              favicon, OG image, robots.txt, sitemap.xml, resume PDF
+└── notes/flutter/   the published notes PDFs, served as-is
 src/
 ├── assets/          project screenshots and profile photo (WebP)
 ├── components/      one component per section
+│   ├── layout/      SiteShell — skip link, navbar, <main>, footer
 │   └── ui/          shared primitives (Section shell, Icon set)
 ├── data/            all site content — edit here, not in components
 ├── hooks/           useTheme, useScrollSpy, useReveal
+├── pages/           HomePage, NotesPage — one per HTML entry
 ├── index.css        design tokens, reset, buttons/cards/tags
-├── App.css          page-level composition
-└── main.jsx         entry point
+├── main.jsx         home page entry point
+└── notes.jsx        notes page entry point
 ```
 
 Each component has a sibling `.css` file. `src/index.css` is imported first in
-`main.jsx` so component styles can override the base layer.
+each entry point so component styles can override the base layer.
+
+**Adding a page** means adding an `<entry>/index.html`, a `src/<entry>.jsx` that
+mounts a page component, and the entry to `rollupOptions.input` in
+`vite.config.js`. Pages wrap their content in `SiteShell`, which owns the
+landmarks so the accessibility scaffolding cannot drift between them; a page
+passes `homeHref="/"` so the navbar's section anchors resolve back to the home
+page.
 
 ---
 
@@ -116,7 +133,12 @@ Everything on the page is driven by plain objects in `src/data/`:
 | `projects.js` | Project cards — name, description, stack, links, images |
 | `experience.js` | Roles, dates and responsibilities |
 | `education.js` | Qualifications and certifications |
-| `navigation.js` | Navbar links and section ids |
+| `navigation.js` | Navbar links — home-page sections and page links |
+| `notes.js` | Notes tracks, modules and the documents in each |
+
+Adding a notes track means dropping the PDFs into `public/notes/<track>/`, then
+setting that track's `status` to `'published'` in `notes.js` and filling in its
+`basePath` and `modules`. No component changes.
 
 Sections hide themselves when their data array is empty, and project cards omit
 buttons for links that aren't set — so nothing on the page ever advertises

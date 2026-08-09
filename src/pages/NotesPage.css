@@ -1,0 +1,71 @@
+.notes-page {
+  padding-block: calc(var(--nav-height) + clamp(2rem, 4vw, 3.25rem))
+    var(--space-section);
+}
+
+.notes-page__header {
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.notes-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.notes-page__back:hover {
+  color: var(--accent);
+}
+
+.notes-page__title {
+  margin-block: 0.35rem 0.9rem;
+  font-size: var(--fs-h2);
+  letter-spacing: -0.035em;
+}
+
+.notes-page__lede {
+  max-width: 62ch;
+  font-size: var(--fs-lede);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Archive stats ------------------------------------------------------------ */
+
+.notes-page__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.notes-page__stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.notes-page__stat dt {
+  order: 2;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.notes-page__stat dd {
+  order: 1;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}

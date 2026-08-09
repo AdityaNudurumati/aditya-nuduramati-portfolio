@@ -44,6 +44,12 @@ const paths = {
       <path d="m13 6 6 6-6 6" fill="none" strokeWidth="1.6" />
     </>
   ),
+  arrowLeft: (
+    <>
+      <path d="M20 12H5" fill="none" strokeWidth="1.6" />
+      <path d="m11 6-6 6 6 6" fill="none" strokeWidth="1.6" />
+    </>
+  ),
   arrowUp: (
     <>
       <path d="M12 20V5" fill="none" strokeWidth="1.6" />
@@ -83,6 +89,17 @@ const paths = {
       <path d="m13.5 5-3 14" fill="none" strokeWidth="1.6" />
     </>
   ),
+  document: (
+    <>
+      <path
+        d="M6 3h7l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"
+        fill="none"
+        strokeWidth="1.6"
+      />
+      <path d="M13 3v5h5" fill="none" strokeWidth="1.6" />
+    </>
+  ),
+  chevronDown: <path d="m6 9.5 6 6 6-6" fill="none" strokeWidth="1.7" />,
   location: (
     <>
       <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" fill="none" strokeWidth="1.6" />

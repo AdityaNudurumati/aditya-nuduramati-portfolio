@@ -1,0 +1,41 @@
+/* Page-level composition shared by every page. Component rules live beside
+   their components. */
+
+#main {
+  position: relative;
+}
+
+/* Hairline gradient that follows the page edge on wide screens — a quiet
+   structural cue rather than decoration. */
+#main::before,
+#main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--border-subtle) 12%,
+    var(--border-subtle) 88%,
+    transparent
+  );
+  pointer-events: none;
+  display: none;
+}
+
+#main::before {
+  left: max(var(--gutter), calc(50% - var(--container-max) / 2));
+}
+
+#main::after {
+  right: max(var(--gutter), calc(50% - var(--container-max) / 2));
+}
+
+@media (min-width: 1280px) {
+  #main::before,
+  #main::after {
+    display: block;
+  }
+}

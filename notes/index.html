@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Notes | Aditya Nudurumati</title>
+    <meta
+      name="description"
+      content="Long-form study notes by Aditya Nudurumati — a full Flutter and Dart track covering the language, architecture, performance, testing and delivery, published as free PDFs."
+    />
+    <meta name="author" content="Aditya Nudurumati" />
+    <link rel="canonical" href="https://adityanudurumati.com/notes/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aditya Nudurumati" />
+    <meta property="og:title" content="Notes | Aditya Nudurumati" />
+    <meta
+      property="og:description"
+      content="Long-form study notes on Flutter and Dart — the language, architecture, performance, testing and delivery — published as free PDFs."
+    />
+    <meta property="og:url" content="https://adityanudurumati.com/notes/" />
+    <meta property="og:image" content="https://adityanudurumati.com/og-image.svg" />
+    <meta property="og:image:alt" content="Aditya Nudurumati — Flutter Developer" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Notes | Aditya Nudurumati" />
+    <meta
+      name="twitter:description"
+      content="Long-form study notes on Flutter and Dart, published as free PDFs."
+    />
+    <meta name="twitter:image" content="https://adityanudurumati.com/og-image.svg" />
+
+    <meta name="theme-color" content="#08090c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Notes",
+        "description": "Long-form study notes published as PDF documents.",
+        "url": "https://adityanudurumati.com/notes/",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Aditya Nudurumati",
+          "url": "https://adityanudurumati.com/"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Aditya Nudurumati",
+          "url": "https://adityanudurumati.com/"
+        }
+      }
+    </script>
+
+    <!-- Apply the stored theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/notes.jsx"></script>
+  </body>
+</html>

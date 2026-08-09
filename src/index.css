@@ -378,6 +378,28 @@ ol {
   border-style: dashed;
 }
 
+/* Eyebrow — the small monospaced kicker above a section or page title. Lives
+   here rather than in Section.css because pages use it outside a <Section>. */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow__mark {
+  width: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
 /* Scroll reveal ------------------------------------------------------------ */
 
 .reveal {

@@ -28,8 +28,8 @@ export function Section({
       <div className={`container container--${container}`}>
         <header className="section__header">
           {eyebrow && (
-            <p className="section__eyebrow">
-              <span className="section__eyebrow-mark" aria-hidden="true" />
+            <p className="eyebrow">
+              <span className="eyebrow__mark" aria-hidden="true" />
               {eyebrow}
             </p>
           )}

@@ -1,0 +1,222 @@
+/* Track tabs --------------------------------------------------------------- */
+
+.notes__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.notes__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.95rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.notes__tab:hover:not(:disabled) {
+  color: var(--text-strong);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+}
+
+.notes__tab.is-active {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+
+.notes__tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.notes__tab-note {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Panel -------------------------------------------------------------------- */
+
+.notes__summary {
+  max-width: 58ch;
+  margin-bottom: 1.5rem;
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.notes__modules {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Module accordion --------------------------------------------------------- */
+
+.notes-module {
+  padding: 0;
+  overflow: hidden;
+}
+
+.notes-module[open] {
+  border-color: var(--border);
+}
+
+.notes-module__summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 1rem;
+  padding: 1.05rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.notes-module__summary::-webkit-details-marker {
+  display: none;
+}
+
+.notes-module__summary:hover {
+  background: var(--surface-hover);
+}
+
+.notes-module__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.notes-module__title {
+  font-size: var(--fs-h3);
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.notes-module__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+}
+
+.notes-module__description {
+  grid-column: 1;
+  max-width: 62ch;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.notes-module__chevron {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--text-faint);
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.notes-module[open] .notes-module__chevron {
+  transform: rotate(180deg);
+}
+
+/* Document rows ------------------------------------------------------------ */
+
+.notes-module__list {
+  display: grid;
+  gap: 1px;
+  padding: 0 1.25rem 1.1rem;
+  margin: 0;
+}
+
+.note-doc {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.5rem;
+  margin-inline: -0.5rem;
+  border-radius: var(--radius-md);
+  border-top: 1px solid var(--border-subtle);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.note-doc:first-child {
+  border-top: none;
+}
+
+.note-doc:hover {
+  background: var(--surface-hover);
+}
+
+.note-doc__index {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+}
+
+.note-doc__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  font-size: var(--fs-small);
+  color: var(--text);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.note-doc__title .icon {
+  flex: none;
+  color: var(--text-faint);
+}
+
+.note-doc:hover .note-doc__title,
+.note-doc__title:hover {
+  color: var(--accent);
+}
+
+.note-doc:hover .note-doc__title .icon {
+  color: var(--accent);
+}
+
+.note-doc__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  color: var(--text-faint);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.note-doc__download:hover {
+  color: var(--text-strong);
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+@media (max-width: 34rem) {
+  .notes-module__summary,
+  .notes-module__list {
+    padding-inline: 1rem;
+  }
+
+  .note-doc {
+    grid-template-columns: 1.7rem 1fr auto;
+  }
+}
