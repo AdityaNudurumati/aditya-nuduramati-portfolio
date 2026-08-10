@@ -59,10 +59,9 @@ export const projects = [
       'Elasticsearch',
     ],
     github: null,
-    // The portal is login-gated, so the link proves it is deployed rather than
-    // offering a walkthrough — the label says so to set expectations.
-    demo: 'https://dashboard1.aquaexchange.com/#/login',
-    demoLabel: 'Live Portal',
+    // The portal is internal and login-gated, so there is no public link.
+    demo: null,
+    demoLabel: null,
     image: dashboardLarge,
     imageSmall: dashboardSmall,
     imageAlt:
