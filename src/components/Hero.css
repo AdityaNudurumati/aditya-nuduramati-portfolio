@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   min-height: 100svh;
-  padding-block: calc(var(--nav-height) + 2.5rem) 3.5rem;
+  padding-block: calc(var(--nav-height) + 2.5rem) 2rem;
   overflow: hidden;
   scroll-margin-top: var(--nav-height);
 }

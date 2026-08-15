@@ -2,14 +2,20 @@ import axmLarge from '../assets/axm-1600.webp';
 import axmSmall from '../assets/axm-900.webp';
 import dashboardLarge from '../assets/dashboard-1600.webp';
 import dashboardSmall from '../assets/dashboard-900.webp';
+import sparkleLarge from '../assets/sparkle-1600.webp';
+import sparkleSmall from '../assets/sparkle-900.webp';
 
 /**
- * Projects. Both entries are production work at AquaExchange, so there is no
- * public repository — `github` is null and the cards omit the Code button.
+ * Projects. The AquaExchange entries are production work with no public
+ * repository — `github` is null and `sourceNote` explains why on the card.
  *
  * Shape:
  *   id, name, context, description, metric, tech[], github, demo, demoLabel,
- *   image, imageSmall, imageAlt, featured
+ *   sourceNote, image, imageSmall, imageAlt, featured, heroShowcase
+ *
+ * `featured` badges the card in the grid; `heroShowcase` picks which project
+ * fills the hero panel. They are separate so the hero can lead with one project
+ * while the grid highlights another.
  *
  * `metric` is the one-line proof point; the hero shows it under the featured
  * project, so keep it short and factual.
@@ -37,6 +43,7 @@ export const projects = [
     github: null,
     demo: 'https://play.google.com/store/apps/details?id=com.aquaexchange.app',
     demoLabel: 'Play Store',
+    sourceNote: 'Company product — source is private',
     image: axmLarge,
     imageSmall: axmSmall,
     imageAlt:
@@ -62,10 +69,39 @@ export const projects = [
     // The portal is internal and login-gated, so there is no public link.
     demo: null,
     demoLabel: null,
+    sourceNote: 'Company product — source is private',
     image: dashboardLarge,
     imageSmall: dashboardSmall,
     imageAlt:
       'The AquaExchange service dashboard: a login screen and the Powermon analytics console showing filters, summary metrics for live acres, devices and active farmers, and month-on-month bar charts of devices and acres.',
     featured: false,
+  },
+  {
+    id: 'sparkle-lite',
+    name: 'Sparkle Lite',
+    context: 'Personal project · Web & mobile',
+    description:
+      'A privacy-first women’s health companion built with Flutter and Riverpod, with purpose-built mobile and web layouts rather than a stretched phone UI. Tracks symptoms and cycles, stores health records, merges everything into a filterable health timeline, and prepares doctor-visit summaries exportable as PDF or text. Insights come from a local, deterministic engine that is educational by design and never diagnostic.',
+    metric: 'Clean Architecture · 10 unit + widget tests · Firebase Hosting',
+    tech: [
+      'Flutter',
+      'Dart',
+      'Riverpod',
+      'go_router',
+      'Firebase Auth',
+      'Cloud Firestore',
+    ],
+    github: null,
+    demo: 'https://sparkle-lite-2a565.web.app',
+    demoLabel: 'Live Demo',
+    // Personal project, but the repository is not public — no note needed, the
+    // card simply omits the Code button.
+    sourceNote: null,
+    image: sparkleLarge,
+    imageSmall: sparkleSmall,
+    imageAlt:
+      'Sparkle Lite shown on web and mobile: a sidebar dashboard with health summary cards, recent activity and quick actions, a filterable health timeline, and a phone screen with the next appointment and recent symptom logs.',
+    featured: false,
+    heroShowcase: true,
   },
 ];

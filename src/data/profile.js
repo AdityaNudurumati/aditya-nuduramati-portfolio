@@ -28,7 +28,7 @@ export const profile = {
   photo: photoLarge,
   photoSmall,
   photoAlt:
-    'Aditya Nudurumati at his desk in the office, working on a laptop beside a second monitor.',
+    'Studio headshot of Aditya Nudurumati in a dark suit and white shirt against a grey backdrop.',
 
   email: 'adithyanudurumati@gmail.com',
   github: 'https://github.com/AdityaNudurumati',

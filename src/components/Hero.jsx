@@ -8,7 +8,10 @@ import './Hero.css';
  * the first screen carries proof. It is a teaser — the Projects section below
  * holds the full write-up, and this links straight to the live listing.
  */
-const showcase = projects.find((project) => project.featured) ?? projects[0];
+const showcase =
+  projects.find((project) => project.heroShowcase) ??
+  projects.find((project) => project.featured) ??
+  projects[0];
 
 export function Hero() {
   const showcaseBody = showcase && (

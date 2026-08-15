@@ -9,7 +9,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="Things I’ve shipped"
-      lede="Production applications built at AquaExchange and used daily by farmers and internal teams."
+      lede="Production applications built at AquaExchange and used daily by farmers and internal teams, plus personal work built the same way."
     >
       <div className="projects__grid">
         {projects.map((project) => (

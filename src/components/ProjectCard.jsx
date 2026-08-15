@@ -14,6 +14,7 @@ export function ProjectCard({ project }) {
     github,
     demo,
     demoLabel,
+    sourceNote,
     image,
     imageSmall,
     imageAlt,
@@ -100,10 +101,8 @@ export function ProjectCard({ project }) {
             </a>
           )}
 
-          {!github && (
-            <p className="project-card__note">
-              Company product — source is private
-            </p>
+          {!github && sourceNote && (
+            <p className="project-card__note">{sourceNote}</p>
           )}
         </div>
       </div>
