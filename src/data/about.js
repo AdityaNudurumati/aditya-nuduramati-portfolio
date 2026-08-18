@@ -1,8 +1,8 @@
 /** Copy for the About section. Edit freely — it is plain text, not markup. */
 export const aboutParagraphs = [
-  'I’m Aditya Nudurumati, a Software Engineer at AquaExchange, where I build Flutter applications for mobile, web, and TV. The domain is aquaculture and IoT: farms running thousands of connected devices that need to be monitored in real time, often from places where the network is unreliable.',
-  'That constraint shapes how I work. Offline-first persistence, predictable state management, and clean architecture aren’t abstract preferences here — they’re what keeps an app usable at the edge of a mobile signal. Most of my work sits around Flutter and Dart with Riverpod, Firebase, and REST APIs, and extends through the full release cycle to the Play Store and App Store.',
-  'I hold a B.Tech in Electronics and Communication Engineering from RGUKT Srikakulam (IIIT-AP). I care about writing code that the next engineer can read, and I enjoy the parts of the job where a performance problem turns out to have a structural fix.',
+  'I’m Aditya Nudurumati, a Software Engineer with 3 years of experience building production cross-platform mobile, web, and TV applications — currently at AquaExchange, where I focus on real-time IoT monitoring for aquaculture farms running thousands of connected devices, often on unreliable networks.',
+  'That constraint drives everything I build. Offline-first architecture, predictable state management (Riverpod/Provider), RESTful API integration, and clean, testable code aren’t nice-to-haves here — they’re what keep an app usable when the connection drops. My day-to-day spans Flutter, Dart, Firebase (Auth, Firestore, Cloud Functions), and third-party integrations including Google Maps, Razorpay payment gateway, and push notifications (FCM), alongside CI/CD pipelines, Git version control, unit and widget testing, and Agile/Scrum workflows. I own the full release cycle through Play Store and App Store deployment.',
+  'B.Tech in Electronics and Communication Engineering, RGUKT Srikakulam (IIIT-AP). I write code the next engineer can read, and I care about performance optimization — I like it best when a slow screen turns out to be an architecture problem in disguise.',
 ];
 
 /** Short factual highlights, all drawn from real experience. */
@@ -13,9 +13,9 @@ export const aboutHighlights = [
     value: 'Software Engineer at AquaExchange Agri Tech, Hyderabad',
   },
   {
-    id: 'focus',
-    label: 'Focus',
-    value: 'Flutter across mobile, web and TV',
+    id: 'experience',
+    label: 'Experience',
+    value: '3 years building cross-platform mobile, web and TV apps',
   },
   {
     id: 'domain',
